@@ -4,7 +4,7 @@ var configuration = Argument("configuration", "Debug");
 void BuildProject(string projectPath, string configuration)
 {
     var settings = new DotNetCoreBuildSettings();
-    settings.SetConfiguration(configuration);
+    settings.Configuration = configuration;
 
     // settings =>
     //     settings.SetConfiguration(configuration)
