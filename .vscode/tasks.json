@@ -6,7 +6,7 @@
             "type": "shell",
             "command": "./build.sh",
             "windows": {
-                "command": "./build.ps1"
+                "command": "./build.ps1 -Configuration \"Debug\""
             },
             "group": "test",
             "presentation": {
