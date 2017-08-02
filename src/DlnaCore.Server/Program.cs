@@ -11,6 +11,7 @@ namespace DlnaCore
     {
         public static void Main(string[] args)
         {
+            File.WriteAllText("/home/stewart/test.tmp", "test");
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
