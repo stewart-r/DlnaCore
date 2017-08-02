@@ -10,7 +10,7 @@ void BuildProject(string projectPath, string configuration)
 }
 
 Task("Default")
-    .IsDependentOn("Build")    
+    .IsDependentOn("RunTests")    
     .Does(() => {
   
     });
@@ -20,10 +20,29 @@ Task("RestorePackages")
         DotNetCoreRestore("src/DlnaCore.Server/");
     });
 
+Task("RestorePackagesTests")
+    .Does(() => {
+        DotNetCoreRestore("tests/DlnaCore.Tests/");
+    });
+
 Task("Build")
     .IsDependentOn("RestorePackages")
     .Does(() => {
         BuildProject("src/DlnaCore.Server/DlnaCore.csproj",configuration);
     });
+
+Task("BuildTests")
+    .IsDependentOn("RestorePackagesTests")
+    .Does(() => {
+        BuildProject("tests/DlnaCore.Tests/DlnaCore.Tests.csproj",configuration);
+    });
+
+Task("RunTests")
+    .IsDependentOn("Build")
+    .IsDependentOn("BuildTests")
+    .Does(() => {
+        DotNetCoreTest("/home/stewart/source/repos/DlnaCore/tests/DlnaCore.Tests/DlnaCore.Tests.csproj");
+    });
+
 
 RunTarget(target);

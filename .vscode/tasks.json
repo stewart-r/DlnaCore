@@ -4,9 +4,9 @@
         {
             "taskName": "build",
             "type": "shell",
-            "command": "./build.sh -c Debug",
+            "command": "./build.sh -c Debug -t Build",
             "windows": {
-                "command": "./build.ps1 -Configuration \"Debug\""
+                "command": "./build.ps1 -Configuration \"Debug\" -Target \"Build\""
             },
             "group": "test",
             "presentation": {
