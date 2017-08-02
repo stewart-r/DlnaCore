@@ -4,7 +4,7 @@
         {
             "taskName": "build",
             "type": "shell",
-            "command": "./build.sh",
+            "command": "./build.sh -c Debug",
             "windows": {
                 "command": "./build.ps1 -Configuration \"Debug\""
             },
