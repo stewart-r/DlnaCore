@@ -13,6 +13,11 @@
                 "reveal": "always",
                 "panel": "new"
             }
+        },
+        {
+            "type": "cake",
+            "script": "Build",
+            "problemMatcher": []
         }
     ]
 }

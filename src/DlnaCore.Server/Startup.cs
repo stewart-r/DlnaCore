@@ -30,7 +30,7 @@ namespace DlnaCore
 
             app.Run(async (context) =>
             {
-                var resp = DlnaCore.Core.TestLib.TestMethod();
+                var resp = "hello";
                 await context.Response.WriteAsync(resp);
             });
         }
