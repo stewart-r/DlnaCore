@@ -41,7 +41,7 @@ Task("RunTests")
     .IsDependentOn("Build")
     .IsDependentOn("BuildTests")
     .Does(() => {
-        DotNetCoreTest("/home/stewart/source/repos/DlnaCore/tests/DlnaCore.Tests/DlnaCore.Tests.csproj");
+        DotNetCoreTest("tests/DlnaCore.Tests/DlnaCore.Tests.csproj");
     });
 
 
