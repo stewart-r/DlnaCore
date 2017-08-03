@@ -1,16 +1,32 @@
 using System;
 using Xunit;
 using DlnaCore.Core;
+using System.Threading.Tasks;
+using System.Linq;
+using Rssdp;
+using System.Collections.Generic;
 
 namespace DlnaCore.Tests
 {
     public class WhenDiscoveringDevices
     {
         [Fact]
-        public void CanPublishSsdp()
+        public async Task CanPublishSsdp()
         {
             var sut = new SsdpPublisher();
-            Assert.True(true);
+            sut.Publish();
+
+            var devices = await FindDevicesAsync();
+            Assert.True(devices.Any( d => d.GetDeviceInfo().Result.Uuid == SsdpPublisher.Uuid ));
+        }
+
+
+        private async Task<IEnumerable<DiscoveredSsdpDevice>> FindDevicesAsync()
+        {
+            using (var deviceLocator = new SsdpDeviceLocator())
+            {
+                return await deviceLocator.SearchAsync();
+            }
         }
     }
 }
