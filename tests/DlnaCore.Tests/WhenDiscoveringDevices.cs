@@ -17,7 +17,7 @@ namespace DlnaCore.Tests
             sut.Publish();
 
             var devices = await FindDevicesAsync();
-            Assert.True(devices.Any( d => d.GetDeviceInfo().Result.Uuid == SsdpPublisher.Uuid ));
+            Assert.True(devices.Any(d => d.Usn.Contains(SsdpPublisher.Uuid)));
         }
 
 
