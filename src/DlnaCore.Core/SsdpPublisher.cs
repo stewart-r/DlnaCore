@@ -10,7 +10,7 @@ namespace DlnaCore.Core
         private SsdpRootDevice _deviceDefinition => new SsdpRootDevice()
         {
             CacheLifetime = TimeSpan.FromMinutes(10),
-            Location = new Uri("http://localhost:5000"),
+            Location = new Uri("http://localhost:5000/DeviceDescription.xml"),
             DeviceTypeNamespace = "DlnaCore",
             DeviceType = "MyDlnaServer",
             FriendlyName = "My Dlna Server",
@@ -18,6 +18,11 @@ namespace DlnaCore.Core
             Uuid = Uuid,
             ModelName = "My Model Dlna Server"
         };
+
+        public string GetDescription()
+        {
+            return _deviceDefinition.ToDescriptionDocument();
+        }
 
         public SsdpPublisher()
         {

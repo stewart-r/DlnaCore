@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DlnaCore.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,8 +31,18 @@ namespace DlnaCore
 
             app.Run(async (context) =>
             {
-                var resp = "hello";
-                await context.Response.WriteAsync(resp);
+                var path = context.Request.Path;
+                if (path == "/DeviceDescription.xml")
+                {
+                    var ssdppub = new SsdpPublisher();
+                    await context.Response.WriteAsync(ssdppub.GetDescription());
+                } 
+                else
+                {
+                    var resp = "hello";
+                    await context.Response.WriteAsync(resp);
+                }
+                
             });
         }
     }
