@@ -24,7 +24,14 @@ namespace DlnaCore
             host.Run(cancellationTkn);
         }
 
-        private static IWebHost BuildHost()
+        public static IWebHost StartHost()
+        {
+            IWebHost host = BuildHost();
+            host.Start();
+            return host;
+        }
+
+        public static IWebHost BuildHost()
         {
             return new WebHostBuilder()
                 .UseKestrel()

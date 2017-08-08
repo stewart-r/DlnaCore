@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root configId="3279495" xmlns="urn:schemas-upnp-org:device-1-0" xmlns:dlna="urn:schemas-dlna-org:device-1-0">
+  <specVersion>
+    <major>0</major>
+    <minor>1</minor>
+  </specVersion>
+  <device>
+    <deviceType>urn:schemas-upnp-org:device:MediaServer:1</deviceType>
+    <friendlyName>Dlna Core Media Server</friendlyName>
+    <manufacturer>Who knows</manufacturer>
+    <manufacturerURL>http://www.example.com/</manufacturerURL>
+    <modelDescription>Dlna Core Media Server</modelDescription>
+    <modelName>Dlna Core Media Server</modelName>
+    <modelNumber>0.1</modelNumber>
+    <modelURL>http://www.example.com/</modelURL>
+    <UDN>uuid:c624d24f-8325-448d-a9c3-1845a102be29</UDN>
+    <dlna:X_DLNADOC xmlns:dlna="urn:schemas-dlna-org:device-1-0">DMS-1.50</dlna:X_DLNADOC>
+    <iconList>
+      <icon>
+        <mimetype>image/png</mimetype>
+        <width>260</width>
+        <height>260</height>
+        <depth>24</depth>
+        <url>/proxy/6b3e9b76e0dabf49fc36/260x260.png</url>
+      </icon>
+      <icon>
+        <mimetype>image/png</mimetype>
+        <width>120</width>
+        <height>120</height>
+        <depth>24</depth>
+        <url>/proxy/2fa94aa5339720bf2c91/120x120.png</url>
+      </icon>
+      <icon>
+        <mimetype>image/png</mimetype>
+        <width>48</width>
+        <height>48</height>
+        <depth>24</depth>
+        <url>/proxy/31ac347acf460ffb6b46/48x48.png</url>
+      </icon>
+      <icon>
+        <mimetype>image/jpeg</mimetype>
+        <width>260</width>
+        <height>260</height>
+        <depth>24</depth>
+        <url>/proxy/a632ff32129da90cd7f7/260x260.jpg</url>
+      </icon>
+      <icon>
+        <mimetype>image/jpeg</mimetype>
+        <width>120</width>
+        <height>120</height>
+        <depth>24</depth>
+        <url>/proxy/6dcd47e5503250216d4e/120x120.jpg</url>
+      </icon>
+      <icon>
+        <mimetype>image/jpeg</mimetype>
+        <width>48</width>
+        <height>48</height>
+        <depth>24</depth>
+        <url>/proxy/c98e34f5d2a3abc5f353/48x48.jpg</url>
+      </icon>
+    </iconList>
+    <serviceList>
+      <service>
+        <serviceType>urn:microsoft.com:service:X_MS_MediaReceiverRegistrar:1</serviceType>
+        <serviceId>urn:microsoft.com:serviceId:X_MS_MediaReceiverRegistrar</serviceId>
+        <SCPDURL>/X_MS_MediaReceiverRegistrar/c624d24f-8325-448d-a9c3-1845a102be29/scpd.xml</SCPDURL>
+        <controlURL>/X_MS_MediaReceiverRegistrar/c624d24f-8325-448d-a9c3-1845a102be29/control.xml</controlURL>
+        <eventSubURL>/X_MS_MediaReceiverRegistrar/c624d24f-8325-448d-a9c3-1845a102be29/event.xml</eventSubURL>
+      </service>
+      <service>
+        <serviceType>urn:schemas-upnp-org:service:ContentDirectory:1</serviceType>
+        <serviceId>urn:upnp-org:serviceId:ContentDirectory</serviceId>
+        <SCPDURL>/ContentDirectory/c624d24f-8325-448d-a9c3-1845a102be29/scpd.xml</SCPDURL>
+        <controlURL>/ContentDirectory/c624d24f-8325-448d-a9c3-1845a102be29/control.xml</controlURL>
+        <eventSubURL>/ContentDirectory/c624d24f-8325-448d-a9c3-1845a102be29/event.xml</eventSubURL>
+      </service>
+      <service>
+        <serviceType>urn:schemas-upnp-org:service:ConnectionManager:1</serviceType>
+        <serviceId>urn:upnp-org:serviceId:ConnectionManager</serviceId>
+        <SCPDURL>/ConnectionManager/c624d24f-8325-448d-a9c3-1845a102be29/scpd.xml</SCPDURL>
+        <controlURL>/ConnectionManager/c624d24f-8325-448d-a9c3-1845a102be29/control.xml</controlURL>
+        <eventSubURL>/ConnectionManager/c624d24f-8325-448d-a9c3-1845a102be29/event.xml</eventSubURL>
+      </service>
+    </serviceList>
+    <av:aggregationFlags xmlns:av="urn:schemas-sonycom:av">10</av:aggregationFlags>
+  </device>
+</root>
